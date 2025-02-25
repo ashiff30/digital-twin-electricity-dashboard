@@ -18,7 +18,7 @@ import { Line, Bar, Pie } from "react-chartjs-2";
 import { Navbar, Row, Col, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// ✅ Register Chart.js components
+
 ChartJS.register(
   LineElement,
   BarElement,
@@ -42,7 +42,7 @@ const Dashboard = () => {
     energy: Math.random() * 100,
   });
 
-  // ✅ Simulate real-time data updates using setInterval
+  // Simulate real-time data updates using setInterval
   useEffect(() => {
     const interval = setInterval(() => {
       setDeviceData({
@@ -51,12 +51,11 @@ const Dashboard = () => {
         power: (500 + Math.random() * 1500).toFixed(2),
         energy: (50 + Math.random() * 50).toFixed(2),
       });
-    }, 3000); // Update every 3 seconds
-
+    }, 3000); 
     return () => clearInterval(interval);
   }, []);
 
-  // ✅ Chart Data
+ 
   const chartLabels = ["Voltage", "Current", "Power", "Energy"];
   const chartValues = [
     deviceData.voltage,
@@ -101,12 +100,12 @@ const Dashboard = () => {
 
   return (
     <div className="bg-light min-vh-100 d-flex flex-column">
-      {/* ✅ Full-width Navbar */}
+      
       <Navbar bg="dark" variant="dark" className="w-100">
         <h4 className="text-white mx-3">Smart Electricity Digital Twin</h4>
       </Navbar>
 
-      {/* ✅ Full-page Layout */}
+      
       <div className="w-100 p-4">
         <Row className="justify-content-center">
           <Col lg={10}>
@@ -122,7 +121,7 @@ const Dashboard = () => {
           </Col>
         </Row>
 
-        {/* ✅ Charts - Full-width with equal spacing */}
+       
         <Row className="mt-4">
           <Col md={6} className="mb-4">
             <Card className="p-3 shadow-lg h-100">
@@ -142,7 +141,7 @@ const Dashboard = () => {
           </Col>
         </Row>
 
-        {/* ✅ Centered Pie Chart */}
+        
         <Row className="mt-4 justify-content-center">
           <Col md={6}>
             <Card className="p-3 shadow-lg">
